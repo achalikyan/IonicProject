@@ -5,25 +5,35 @@
         <ion-buttons slot="start">
           <ion-back-button></ion-back-button>
         </ion-buttons>
-        <ion-title>HomePage</ion-title>
+        <ion-title>Login</ion-title>
       </ion-toolbar>
     </ion-header>
 
 
-    <ion-content :fullscreen="true" >
-      <div style="text-align: center;" class="animated-bg">
+    <ion-content :fullscreen="true">
+
+      
+
+      <div style="text-align: center;"  class="animated-bg">
         <h1>
-          <span class="highlight">NEXT</span>CALENDAR
+          INICIAR SESION
         </h1>
 
-        <img src="@\assets\images\logo.png" alt="Desc" style="width: 75%; max-width: 300px; margin-top: 16px;">
-        
-        <h1></h1>
+        <div class="list">
+          <ion-item class="custom-input">
+            <ion-input placeholder="Mail/Numero"></ion-input>
+          </ion-item>
+          <ion-item class="custom-input">
+            <ion-input type="password" placeholder="Contraseña"></ion-input>
+          </ion-item>
+        </div>
 
         
+        <h1></h1>
+                
         <div class="button-list">
-        <ion-button expand="block" class="font" router-link="/register">REGISTRARSE</ion-button>
-        <ion-button expand="block" class="font" router-link="/login">INICIAR SESIÓN</ion-button>
+        <ion-button expand="block" class="font" router-link="/register">NO TENGO CUENTA</ion-button>
+        <ion-button expand="block" class="font" router-link="/tabs/home">INICIAR SESIÓN</ion-button>
       </div>
       </div>
     </ion-content>
@@ -37,6 +47,25 @@ import { IonBackButton, IonButtons, IonButton, IonContent, IonHeader, IonPage, I
 
 
 <style scoped>
+
+.custom-input {
+  --border-color: #707070; /* Color del borde */
+  --border-width: 1px;
+  --border-radius: 10px; /* Bordes redondeados */
+  --background: transparent; /* Fondo transparente */
+  --inner-border-width: 0px; /* Elimina la línea inferior */
+  --highlight-color: transparent; /* Evita efectos de resaltado */
+  --ion-item-border-color: transparent; /* Otra opción para eliminar la línea */
+
+  padding: 5px 10px; /* Reduce el espacio interno */
+  min-height: 20px; /* Ajusta la altura del rectángulo */
+}
+
+ion-input {
+  --padding-start: 5px; /* Reduce el espacio interno del input */
+  font-size: 1.2rem;
+}
+
 .animated-bg::before {
   content: "";
   position: absolute;
@@ -53,6 +82,8 @@ import { IonBackButton, IonButtons, IonButton, IonContent, IonHeader, IonPage, I
                      100% 91%, 100% 97%, 100% 100%);
   z-index: -1; 
 }
+
+
 @font-face {
   font-family: "Staatliches-Regular";
   src: url("@/assets/fonts/Staatliches-Regular.woff") format("woff");
@@ -62,7 +93,7 @@ import { IonBackButton, IonButtons, IonButton, IonContent, IonHeader, IonPage, I
 }
 h1 {
   font-family: "Staatliches-Regular", serif;
-  color: #525252;
+  color: #000000;
   font-size: 3.65rem;
   font-weight: bold;
   text-align: center;
@@ -87,7 +118,18 @@ ion-button {
   margin-left: auto;
   margin-right: auto;
   margin-bottom: auto;
-  margin-top: 78%;
+  margin-top: 108%;
+  max-width: 280px;
+  width: 100%;
+}
+.list {
+  row-gap: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: auto;
   max-width: 280px;
   width: 100%;
 }</style>
